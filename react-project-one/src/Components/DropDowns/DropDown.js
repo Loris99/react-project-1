@@ -4,7 +4,7 @@ const DropDown = (props) => {
     <select name="Options" className={styles.dropDown}>
       {/* <input type="text" placeholder="Search.." id="myInput" /> */}
       {props.optionsArray.map((value, index) => (
-        <option key={index}> {value}</option>
+        <option key={index}>{value}</option>
       ))}
     </select>
   );

@@ -1,0 +1,26 @@
+.input{
+    width: 190px;
+    height:35px;
+    margin:10px; 
+    background-color: #ffbdc85e;
+    border: 3px solid #db9da87a;
+    border-radius: 3px;
+}
+.input:focus{
+    border: 3px solid #d98695;
+    outline-offset: 0px;
+    outline: none;
+}
+.btn{
+    width: 100px;
+    height: 40px;
+    background-color: #ffe7eb;
+    border: 3px solid #d98695;
+    border-radius: 10px; 
+  }
+  .btn:hover{
+    border: 3px solid #d98695;
+    background-color:pink;
+    outline-offset: 0px;
+    outline: none;
+}
