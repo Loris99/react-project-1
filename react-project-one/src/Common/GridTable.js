@@ -10,33 +10,22 @@ import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
 const GridTable = (props) => {
   const gridRef = useRef(null);
-  const [rowData, setRowData] = useState([]);
+  // const [rowData, setRowData] = useState([]);
 
-  const fetchData = () => {
-    axios
-      .get(props.api)
+  // const fetchData = () => {
+  //   axios.get(props.api).then((response) => {
+  //     setRowData(response.data.data);
+  //     console.log("response", response);
+  //   });
+  //   // .then(data => setRowData(data))
+  //   // .catch(error => {
+  //   //   console.log({ error })
+  //   // })
+  // };
+  // useEffect(() => {
+  //   fetchData();
+  // }, [props.api]);
 
-      .then((response) => {
-        setRowData(response.data.data);
-        console.log("response", response);
-      });
-    // .then(data => setRowData(data))
-    // .catch(error => {
-    //   console.log({ error })
-    // })
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const onButtonClick = () => {
-    const selectedNodes = gridRef.current.api.getSelectedNodes();
-    const selectedData = selectedNodes.map((node) => node.data);
-    const selectedDataStringPresentation = selectedData
-      .map((node) => node.make + " " + node.model)
-      .join(", ");
-    alert(`selected nodes : ${selectedDataStringPresentation}`);
-  };
   const autoGroupColumnDef = useMemo(
     () => ({
       field: "model",
@@ -49,11 +38,10 @@ const GridTable = (props) => {
 
   return (
     <div className="ag-theme-alpine" style={{ height: 500, width: 800 }}>
-      <button onClick={onButtonClick}>Get Selected Rows</button>
       <AgGridReact
         enableRtl={true}
         ref={gridRef}
-        rowData={rowData}
+        rowData={props.rowData}
         columnDefs={props.columnDefs}
         rowSelection="multiple"
         autoGroupColumnDef={autoGroupColumnDef}
