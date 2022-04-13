@@ -1,16 +1,30 @@
 import DropDown from "../DropDowns/DropDown";
 import classes from "./FilterLine.module.css";
-import { useState, useRef } from "react";
 const FilterLine = (props) => {
   // const nameToSearchRef = useRef();
   const specialitiesArray = [
-    "كل التخصصات",
+    "جميع التخصصات",
     "اعصاب",
     "الاسنان",
     "الصدرية",
     "مختبر",
     "عيون",
   ];
+  // const citiesArray = {
+  //   0: "الجميع",
+  //   13: "رام الله",
+  //   1: "جنين",
+  //   5: "طولكرم",
+  //   15: "القدس",
+  //   21: "غزة",
+  //   3: "نابلس",
+  //   19: "الخليل",
+  //   17: "بيت لحم",
+  //   11: " أريحا",
+  //   23: "طوباس",
+  //   7: "قلقيلية",
+  //   9: "سلفيت",
+  // };
   const citiesArray = [
     "الجميع",
     "رام الله",
@@ -27,9 +41,9 @@ const FilterLine = (props) => {
     "طوباس",
   ];
 
-  const searchHandler = () => {
-    console.log("updated data,", props.dataFilters);
-  };
+  // const searchHandler = () => {
+  //   console.log("updated data,", props.dataFilters);
+  // };
   const updateCity = (event) => {
     props.dataFilters.selectedCity = event.target.value;
     props.setDataFilters({ ...props.dataFilters });
@@ -59,7 +73,7 @@ const FilterLine = (props) => {
       />
       <DropDown optionsArray={citiesArray} selectedOption={updateCity} />
 
-      <button className={classes.btn} onClick={searchHandler}>
+      <button className={classes.btn} onClick={props.fetchData}>
         بحث
       </button>
     </div>

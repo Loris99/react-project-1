@@ -10,21 +10,6 @@ import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 
 const GridTable = (props) => {
   const gridRef = useRef(null);
-  // const [rowData, setRowData] = useState([]);
-
-  // const fetchData = () => {
-  //   axios.get(props.api).then((response) => {
-  //     setRowData(response.data.data);
-  //     console.log("response", response);
-  //   });
-  //   // .then(data => setRowData(data))
-  //   // .catch(error => {
-  //   //   console.log({ error })
-  //   // })
-  // };
-  // useEffect(() => {
-  //   fetchData();
-  // }, [props.api]);
 
   const autoGroupColumnDef = useMemo(
     () => ({
