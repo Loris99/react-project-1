@@ -1,13 +1,12 @@
 import React, { useEffect, useState, useRef, useMemo } from "react";
 import { AgGridReact } from "ag-grid-react";
-import axios from "axios";
 // import { AgGridReact } from "@ag-grid-community/react";
 import "ag-grid-community/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.css";
 // import "ag-grid-enterprise";
 // import { LicenseManager } from "ag-grid-enterprise";
 // LicenseManager.setLicenseKey("my-license-key");
-
+const length = 10;
 const GridTable = (props) => {
   const gridRef = useRef(null);
 
@@ -31,6 +30,8 @@ const GridTable = (props) => {
         rowSelection="multiple"
         autoGroupColumnDef={autoGroupColumnDef}
         groupSelectsChildren={true}
+        pagination={true}
+        paginationPageSize={length}
       ></AgGridReact>
     </div>
   );

@@ -1,7 +1,6 @@
 import DropDown from "../DropDowns/DropDown";
 import classes from "./FilterLine.module.css";
 const FilterLine = (props) => {
-  // const nameToSearchRef = useRef();
   const specialitiesArray = [
     { value: 0, label: "جميع التخصصات" },
     { value: "اعصاب", label: "اعصاب" },
@@ -9,7 +8,6 @@ const FilterLine = (props) => {
     { value: "الصدرية", label: "الصدرية" },
     { value: "مختبر", label: "مختبر" },
     { value: "عيون", label: "عيون" },
-
   ];
   const citiesArray = [
     { value: 0, label: "الجميع" },
@@ -24,16 +22,9 @@ const FilterLine = (props) => {
     { value: 17, label: "بيت لحم" },
     { value: 19, label: "الخليل" },
     { value: 21, label: "غزة" },
-    { value: 23, label: "طوباس" },];
+    { value: 23, label: "طوباس" },
+  ];
 
-  // console.log(citiesArray[0].label);
-  // citiesArray.map((option) => console.log("cities array ", option.label)
-  // )
-
-
-  // const searchHandler = () => {
-  //   console.log("updated data,", props.dataFilters);
-  // };
   const updateCity = (event) => {
     props.dataFilters.selectedCity = event.target.value;
     props.setDataFilters({ ...props.dataFilters });
@@ -45,9 +36,13 @@ const FilterLine = (props) => {
     // console.log("updated city,", props.dataFilters);
   };
   const updateName = (event) => {
-    props.dataFilters.enteredName = event.target.value;
+    const name = event.target.value;
+    if (name === "") {
+      props.dataFilters.enteredName = 0;
+    } else {
+      props.dataFilters.enteredName = name;
+    }
     props.setDataFilters({ ...props.dataFilters });
-    // console.log("updated name,", props.dataFilters);
   };
 
   return (

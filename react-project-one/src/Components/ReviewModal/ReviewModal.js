@@ -1,6 +1,9 @@
 import styles from "./ReviewModal.module.css";
 import React from "react";
 import ReactDom from "react-dom";
+import StarRating from "./StarRating";
+// import ReactStars from "react-rating-stars-component";
+// import { render } from "react-dom";
 import { useState, useEffect } from "react";
 const Backdrop = (props) => {
   return <div className={styles.backdrop} onClick={props.onClose}></div>;
@@ -30,11 +33,15 @@ const ModalOverlay = (props) => {
           <h1>{title}</h1>
         </div>
         <div className={styles.body}>
+          <div className={styles.starLine}>
+            <StarRating />
+          </div>
+
           <textarea disabled={!props.editMode} />
         </div>
         <div className={styles.footer}>
           {props.editMode && <button className={styles.saveBtn}> حفظ </button>}
-          <button className={styles.btn} onClick={props.onClose}>
+          <button className={styles.closeBtn} onClick={props.onClose}>
             إغلاق
           </button>
         </div>
@@ -43,8 +50,6 @@ const ModalOverlay = (props) => {
   );
 };
 const ReviewModal = (props) => {
-  console.log("mode in RM :", props.editMode);
-
   return (
     <div>
       {ReactDom.createPortal(

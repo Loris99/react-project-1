@@ -37,11 +37,12 @@
   grid-row: 3 / -1;
   padding: 20px;
 }
-.btn{
+.closeBtn{
   width: 100px;
   height: 40px;
-  background-color: #ffe7eb;
-  border: 3px solid #d98695;
+  background-color: #fffdf5;
+  color :rgb(119, 119, 119);
+  border: 3px solid  #ffd100;
   border-radius: 10px; 
   /* margin: 20px;  */
 }
@@ -60,25 +61,33 @@ textarea{
   width: 90%;
   height: 70%;
   margin: 20px;
+  margin-top: 0px;
+
 }
 .saveBtn{
   width: 100px;
   height: 40px;
-  background-color: #faa4b2;
-  border: 3px solid #d98695;
+  background-color: #ffd100;
+    color :rgb(119, 119, 119);
+    border: 3px solid  #ffd100;
   border-radius: 10px; 
   margin-left: 20px; 
 }
 .saveBtn:hover{
-  border: 3px solid #d98695;
-  background-color:pink;
+  border: 3px solid rgb(226, 192, 41);
+  background-color: #003C71;
+  color :#ffd100;
   outline-offset: 0px;
   outline: none;
 }
-.btn:hover{
-  border: 3px solid #d98695;
-  background-color:pink;
+.closeBtn:hover{
+  background-color: #ffd100;
+    color :rgb(119, 119, 119);
+    border: 3px solid  #ffd100;
   outline-offset: 0px;
   outline: none;
 }
 
+.starLine{
+  margin:10px;
+}

@@ -1,26 +1,31 @@
 .input{
     width: 190px;
-    height:35px;
+    height:33px;
     margin:10px; 
-    background-color: #ffbdc85e;
-    border: 3px solid #db9da87a;
-    border-radius: 3px;
+   
+    background-color: #ffffff;
+    /* background-color: #ffbdc85e; */
+    border: 2px solid #e1e1e1;;
+    color: #242323;
+    border-radius: 5px;
 }
 .input:focus{
-    border: 3px solid #d98695;
+    border: 2px solid grey;
     outline-offset: 0px;
     outline: none;
 }
 .btn{
     width: 100px;
     height: 40px;
-    background-color: #ffe7eb;
-    border: 3px solid #d98695;
+    background-color: #ffd100;
+    color :rgb(119, 119, 119);
+    border: 3px solid  #ffd100;
     border-radius: 10px; 
   }
   .btn:hover{
-    border: 3px solid #d98695;
-    background-color:pink;
+    border: 3px solid rgb(226, 192, 41);
+    background-color: #003C71;
+    color :#ffd100;
     outline-offset: 0px;
     outline: none;
 }
