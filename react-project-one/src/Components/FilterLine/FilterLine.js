@@ -3,43 +3,33 @@ import classes from "./FilterLine.module.css";
 const FilterLine = (props) => {
   // const nameToSearchRef = useRef();
   const specialitiesArray = [
-    "جميع التخصصات",
-    "اعصاب",
-    "الاسنان",
-    "الصدرية",
-    "مختبر",
-    "عيون",
+    { value: 0, label: "جميع التخصصات" },
+    { value: "اعصاب", label: "اعصاب" },
+    { value: "الاسنان", label: "الاسنان" },
+    { value: "الصدرية", label: "الصدرية" },
+    { value: "مختبر", label: "مختبر" },
+    { value: "عيون", label: "عيون" },
+
   ];
-  // const citiesArray = {
-  //   0: "الجميع",
-  //   13: "رام الله",
-  //   1: "جنين",
-  //   5: "طولكرم",
-  //   15: "القدس",
-  //   21: "غزة",
-  //   3: "نابلس",
-  //   19: "الخليل",
-  //   17: "بيت لحم",
-  //   11: " أريحا",
-  //   23: "طوباس",
-  //   7: "قلقيلية",
-  //   9: "سلفيت",
-  // };
   const citiesArray = [
-    "الجميع",
-    "رام الله",
-    "جنين",
-    "طولكرم",
-    "القدس",
-    "غزة",
-    "نابلس",
-    "الخليل",
-    "بيت لحم",
-    " أريحا",
-    "طوباس",
-    "قلقيلية",
-    "طوباس",
-  ];
+    { value: 0, label: "الجميع" },
+    { value: 1, label: "جنين" },
+    { value: 3, label: "نابلس" },
+    { value: 5, label: "طولكرم" },
+    { value: 7, label: "قلقيلية" },
+    { value: 9, label: "سلفيت" },
+    { value: 11, label: "أريحا" },
+    { value: 13, label: "رام الله" },
+    { value: 15, label: "القدس" },
+    { value: 17, label: "بيت لحم" },
+    { value: 19, label: "الخليل" },
+    { value: 21, label: "غزة" },
+    { value: 23, label: "طوباس" },];
+
+  // console.log(citiesArray[0].label);
+  // citiesArray.map((option) => console.log("cities array ", option.label)
+  // )
+
 
   // const searchHandler = () => {
   //   console.log("updated data,", props.dataFilters);
