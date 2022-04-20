@@ -1,0 +1,21 @@
+.container{
+display: grid;
+height: 100%;
+width: 100%;
+grid-template-columns: 70% 1fr;
+grid-template-rows: 50% 1fr;
+}
+.infomration{
+grid-row: 1/2;
+grid-column: 1/2;
+}
+.rate{
+    grid-row:1/2 ;
+    grid-column: 2/3;
+
+}
+.table{
+    grid-row: 2/-1;
+    grid-column: 1/-1;
+
+}

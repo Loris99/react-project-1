@@ -1,5 +1,8 @@
 import DropDown from "../DropDowns/DropDown";
+import ReviewModal from "../ReviewModal/ReviewModal";
 import classes from "./FilterLine.module.css";
+import PropTypes from "prop-types";
+
 const FilterLine = (props) => {
   const specialitiesArray = [
     { value: 0, label: "جميع التخصصات" },
@@ -36,7 +39,7 @@ const FilterLine = (props) => {
     // console.log("updated city,", props.dataFilters);
   };
   const updateName = (event) => {
-    const name = event.target.value;
+    const name = event.target.value.trim();
     if (name === "") {
       props.dataFilters.enteredName = 0;
     } else {
@@ -46,7 +49,7 @@ const FilterLine = (props) => {
   };
 
   return (
-    <div>
+    <>
       <input
         className={classes.input}
         placeholder="البحث عن الاسم"
@@ -61,7 +64,12 @@ const FilterLine = (props) => {
       <button className={classes.btn} onClick={props.fetchData}>
         بحث
       </button>
-    </div>
+    </>
   );
+};
+FilterLine.propTypes = {
+  dataFilters: PropTypes.object,
+  setDataFilters: PropTypes.func,
+  fetchData: PropTypes.func,
 };
 export default FilterLine;

@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import React from "react";
 import { useState, useEffect } from "react";
 import GridTable from "../../Common/GridTable";
@@ -6,10 +6,10 @@ import FilterLine from "../FilterLine/FilterLine";
 import classes from "./MainPage.module.css";
 import ReviewModal from "../ReviewModal/ReviewModal";
 import axios from "axios";
-import Overview from "../ReviewModal/Overview";
+
+import Overview from "../Overview/Overview";
 import { FaRegListAlt, FaInfoCircle } from "react-icons/fa";
 import { Route } from "react-router-dom";
-import PropTypes from "prop-types";
 const api =
   "https://www.mashreqins.com/ar/data/selectedCity/enteredName/selectedSpeciality?draw=1&columns[0][data]=address&columns[0][name]=address&columns[0][searchable]=true&columns[0][orderable]=true&columns[0][search][value]=&columns[0][search][regex]=false&columns[1][data]=major&columns[1][name]=major&columns[1][searchable]=true&columns[1][orderable]=true&columns[1][search][value]=&columns[1][search][regex]=false&columns[2][data]=doctor&columns[2][name]=doctor&columns[2][searchable]=true&columns[2][orderable]=true&columns[2][search][value]=&columns[2][search][regex]=false&columns[3][data]=mobile&columns[3][name]=mobile&columns[3][searchable]=true&columns[3][orderable]=true&columns[3][search][value]=&columns[3][search][regex]=false&columns[4][data]=city&columns[4][name]=city&columns[4][searchable]=true&columns[4][orderable]=true&columns[4][search][value]=&columns[4][search][regex]=false&order[0][column]=0&order[0][dir]=asc&start=0&length=3000&search[value]=&search[regex]=false&_=1649055412974";
 
@@ -51,10 +51,26 @@ const MainPage = (props) => {
   const updateImageIsClicked = () => {
     setImageIsClicked(true);
   };
+
   const [columnDefs] = useState([
-    { headerName: "العنوان", field: "address", sortable: true, filter: true },
-    { headerName: "التخصص", field: "major", sortable: true, filter: true },
-    { headerName: "الطبيب", field: "doctor", sortable: true, filter: true },
+    {
+      headerName: "العنوان",
+      field: "address",
+      resizable: true,
+      suppressSizeToFit: true,
+    },
+    {
+      headerName: "التخصص",
+      field: "major",
+      resizable: true,
+      suppressSizeToFit: true,
+    },
+    {
+      headerName: "الطبيب",
+      field: "doctor",
+      resizable: true,
+      suppressSizeToFit: true,
+    },
     {
       header: "معلومات أكثر",
       cellRendererFramework: (params) => (
@@ -63,25 +79,53 @@ const MainPage = (props) => {
             display: "flex",
             alignItems: "center",
             height: "100%",
-            columnGap: "14px",
+            columnGap: "20px",
           }}
         >
           <FaRegListAlt size={20} onClick={updateImageIsClicked} />
 
-          {/* <NavLink to="/overview"> */}
-          <FaInfoCircle size={20} />
-          {/* </NavLink> */}
+          <Link
+            to={{
+              pathname: "/overview",
+              state: {
+                updateImageIsClicked,
+                // editMode,
+                close,
+              },
+            }}
+            className={classes.linkStyle}
+            style={{ color: "disabled" }}
+          >
+            <FaInfoCircle
+              size={20}
+              component={NavLink}
+              to="/overview"
+              // onClick={handleOverview}
+            />
+          </Link>
         </div>
       ),
     },
   ]);
+
+  // const handleOverview = (event) => {
+  //   event.preventDefault();
+  //   props.history.push({
+  //     pathname: "/overview",
+  //     updateImageIsClicked,
+  //   });
+  // };
+  // const gridOptions = {
+  //   api.sizeColumnsToFit();
+
+  // };
   const close = () => {
     setImageIsClicked(null);
   };
 
   return (
-    <div>
-      <div>
+    <div className={classes.container}>
+      <div className={classes.filterStyle}>
         <FilterLine
           setDataFilters={setDataFilters}
           dataFilters={dataFilters}
@@ -101,11 +145,4 @@ const MainPage = (props) => {
   );
 };
 
-MainPage.propTypes = {
-  api: PropTypes.string,
-  columnDefs: PropTypes.array,
-  rowData: PropTypes.array,
-  imageIsClicked: PropTypes.bool,
-  //to add moreg
-};
 export default MainPage;

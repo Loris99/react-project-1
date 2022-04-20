@@ -3,3 +3,27 @@
     height: 20px;
     margin: 10px;
 }
+.linkStyle{
+    text-decoration: none;
+    color: disabled;
+}
+.container{
+    height: 100%;
+    width:100%;
+    display: grid;
+    grid-template-rows: 90px 1fr;
+    justify-content: inherit;
+    margin:20px;
+    margin-left: 20px;
+    min-width: 400px;
+    min-height: fit-content;
+
+}
+.filterStyle{
+    display: flex;
+    column-gap: 20px;
+    /* align-content: flex-end; */
+    padding-top: 20px;
+    margin-right: 20px;
+
+}

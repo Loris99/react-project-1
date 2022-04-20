@@ -87,6 +87,16 @@ textarea{
   outline-offset: 0px;
   outline: none;
 }
+.saveBtn:disabled{
+ background-color: #2032424b;
+ border: 3px solid  #ebe7d6;
+ color :rgb(119, 119, 119);
+}
+.saveBtn:disabled:hover{
+  background-color: #2032424b;
+  border: 3px solid  #ebe7d6;
+  color :rgb(119, 119, 119);
+}
 
 .starLine{
   margin:10px;
