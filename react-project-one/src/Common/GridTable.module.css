@@ -13,9 +13,18 @@
    
         /* grid-area: auto; */
 /* } */ 
-.ag-theme-alpine .ag-root-wrapper {
+/* :global(.ag-theme-alpine .ag-root-wrapper) {
     border: solid 1px;
     border-color: #babfc7;
     border-color: var(--ag-border-color, #babfc7);
-    height: 550px;
+    height: 100%;
+} */
+:global(.ag-theme-alpine ){
+    height:100%;
+}
+/* :global(.ag-theme-alpine .ag-root-wrapper .ag-rtl .ag-layout-auto-height){
+    height:100%;
+} */
+:global(.ag-theme-alpine .ag-root-wrapper-body .ag-focus-managed .ag-layout-auto-height){
+    height:100%;  
 }

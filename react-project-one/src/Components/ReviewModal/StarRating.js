@@ -14,8 +14,9 @@ const StarRating = (props) => {
       setRating(ratingValue);
       props.updateIsRated(true);
     };
+    console.log({ star });
     return (
-      <label>
+      <label key={index}>
         <input
           type="radio"
           name="rating"

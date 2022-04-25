@@ -5,7 +5,7 @@ import Overview from "./Components/Overview/Overview";
 
 function App() {
   return (
-    <div dir="rtl">
+    <div dir="rtl" style={{ height: "100%" }}>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/mainpage" element={<MainPage />} />

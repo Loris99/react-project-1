@@ -10,6 +10,8 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
+document.getElementById("root").style.height = "100%";
+
 // root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
