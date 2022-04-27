@@ -1,5 +1,4 @@
 import DropDown from "../DropDowns/DropDown";
-import ReviewModal from "../ReviewModal/ReviewModal";
 import classes from "./FilterLine.module.css";
 import PropTypes from "prop-types";
 
@@ -31,12 +30,10 @@ const FilterLine = (props) => {
   const updateCity = (event) => {
     props.dataFilters.selectedCity = event.target.value;
     props.setDataFilters({ ...props.dataFilters });
-    // console.log("updated city,", props.dataFilters);
   };
   const updateSpeciality = (event) => {
     props.dataFilters.selectedSpeciality = event.target.value;
     props.setDataFilters({ ...props.dataFilters });
-    // console.log("updated city,", props.dataFilters);
   };
   const updateName = (event) => {
     const name = event.target.value.trim();

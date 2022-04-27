@@ -6,6 +6,7 @@
     color: #242323;
     border-radius: 5px;
 }
+
 .dropDown:focus{
     border: 2px solid grey;
     outline-offset: 0px;

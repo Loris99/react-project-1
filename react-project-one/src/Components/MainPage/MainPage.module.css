@@ -3,33 +3,34 @@
     height: 20px;
     margin: 10px;
 }
+
 .linkStyle{
     text-decoration: none;
     color: disabled;
 }
+
 .container{
     height: 100%;
-    /* width:100%; */
-    display: grid;
-    grid-template-rows: 90px 1fr;
-    /* justify-content: inherit; */
-    /* margin:20px; */
+     display: flex;
+     flex-direction: column;
     margin-left: 20px;
     min-width: 400px;
     min-height: fit-content;
-
 }
+
 .filterStyle{
     display: flex;
     column-gap: 20px;
-    /* align-content: flex-end; */
+    row-gap: 5px;
     padding-top: 40px;
     margin-right: 20px;
-
+    flex-wrap: wrap;
 }
+
 .gridContainer{
-    height: 100%;
-    /* width:100%;  */
+    /* height: 100%; */
+    flex: 1;
+    overflow: auto;
     padding:20px;
     box-sizing: border-box;
 }

@@ -9,12 +9,10 @@ const StarRating = (props) => {
   const [hover, setHover] = useState(null);
   return [...Array(NUM_Of_STARS)].map((star, index) => {
     const ratingValue = index + 1; //start from 1
-
     const updateStars = () => {
       setRating(ratingValue);
       props.updateIsRated(true);
     };
-    console.log({ star });
     return (
       <label key={index}>
         <input

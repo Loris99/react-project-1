@@ -20,23 +20,28 @@
   padding: 40px;
   border-radius: 30px;
 }
+
 .container{
   display: grid;
   grid-template-rows: 80px 280px 80px;
   border: 3px solid rgb(194, 187, 187);
 }
+
 .header{
   grid-row: 1 / 2;
   border-bottom:3px solid black ;
 }
+
 .body{
   grid-row: 2 / 3;
   border-bottom:3px solid black ;
 }
+
 .footer{
   grid-row: 3 / -1;
   padding: 20px;
 }
+
 .closeBtn{
   width: 100px;
   height: 40px;
@@ -44,11 +49,12 @@
   color :rgb(119, 119, 119);
   border: 3px solid  #ffd100;
   border-radius: 10px; 
-  /* margin: 20px;  */
 }
+
 h1 {
   margin: 20px
 }
+
 .fa {
   font-size: 25px;
 }
@@ -62,17 +68,18 @@ textarea{
   height: 70%;
   margin: 20px;
   margin-top: 0px;
-
 }
+
 .saveBtn{
   width: 100px;
   height: 40px;
   background-color: #ffd100;
-    color :rgb(119, 119, 119);
-    border: 3px solid  #ffd100;
+  color :rgb(119, 119, 119);
+  border: 3px solid  #ffd100;
   border-radius: 10px; 
   margin-left: 20px; 
 }
+
 .saveBtn:hover{
   border: 3px solid rgb(226, 192, 41);
   background-color: #003C71;
@@ -80,18 +87,21 @@ textarea{
   outline-offset: 0px;
   outline: none;
 }
+
 .closeBtn:hover{
   background-color: #ffd100;
-    color :rgb(119, 119, 119);
-    border: 3px solid  #ffd100;
+  color :rgb(119, 119, 119);
+  border: 3px solid  #ffd100;
   outline-offset: 0px;
   outline: none;
 }
+
 .saveBtn:disabled{
  background-color: #2032424b;
  border: 3px solid  #ebe7d6;
  color :rgb(119, 119, 119);
 }
+
 .saveBtn:disabled:hover{
   background-color: #2032424b;
   border: 3px solid  #ebe7d6;
