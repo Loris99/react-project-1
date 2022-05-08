@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 const api =
   "https://health-care-project-29d14-default-rtdb.europe-west1.firebasedatabase.app/reviews.json";
 
-const Overview = (props) => {
+const Overview = () => {
   const navigate = useNavigate();
   const [rowData, setRowData] = useState([]);
   const fetchReviews = () => {
@@ -34,7 +34,7 @@ const Overview = (props) => {
     },
     {
       headerName: "تاريخ التقديم",
-      // field: "address",
+      // field: "address", //for the data base
       resizable: true,
       suppressSizeToFit: true,
     },
@@ -121,7 +121,7 @@ const Overview = (props) => {
   );
 };
 Overview.propTypes = {
-  // updateImageIsClicked: PropTypes.func,
+  updateImageIsClicked: PropTypes.func,
   imageIsClicked: PropTypes.bool,
   close: PropTypes.func,
 };

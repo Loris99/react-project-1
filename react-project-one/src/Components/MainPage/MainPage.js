@@ -19,7 +19,6 @@ const MainPage = () => {
     selectedSpeciality: "0",
   });
   const [rowData, setRowData] = useState([]);
-  const [majors, setMajors] = useState([]);
   const loadingMessage = "يرجى الإنتظار";
   const noRowsMessage = "لا يوجد معلومات حاليا";
   const fetchData = () => {
@@ -82,8 +81,6 @@ const MainPage = () => {
               onClick={() =>
                 navigate("/overview", {
                   state: { data: params.data}
-
-
                 })
               }
             />
