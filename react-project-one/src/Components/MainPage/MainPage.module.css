@@ -1,0 +1,34 @@
+.icon {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+}
+
+.linkStyle {
+    text-decoration: none;
+    color: disabled;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    padding: 40px;
+    min-width: 400px;
+    min-height: fit-content;
+}
+
+.filterStyle {
+    display: flex;
+    column-gap: 20px;
+    row-gap: 5px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.gridContainer {
+    flex: 1;
+    overflow: auto;
+    box-sizing: border-box;
+}

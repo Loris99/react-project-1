@@ -1,0 +1,31 @@
+.input{
+    width: 190px;
+    height:33px;
+    background-color: #ffffff;
+    border: 2px solid #e1e1e1;;
+    color: #242323;
+    border-radius: 5px;
+}
+
+.input:focus{
+    border: 2px solid grey;
+    outline-offset: 0px;
+    outline: none;
+}
+
+.btn{
+    width: 100px;
+    height: 40px;
+    background-color: #ffd100;
+    color :rgb(119, 119, 119);
+    border: 3px solid  #ffd100;
+    border-radius: 10px; 
+  }
+  
+  .btn:hover{
+    border: 3px solid rgb(226, 192, 41);
+    background-color: #003C71;
+    color :#ffd100;
+    outline-offset: 0px;
+    outline: none;
+}
