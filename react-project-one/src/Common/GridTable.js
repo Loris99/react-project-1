@@ -30,7 +30,6 @@ const GridTable = (props) => {
         domLayout="autoHeight"
       ></AgGridReact>
     </div>
-    // </div>
   );
 };
 export default GridTable;

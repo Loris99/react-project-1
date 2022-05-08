@@ -23,9 +23,7 @@ const Overview = (props) => {
   useEffect(() => {
     fetchReviews();
   }, []);
-  console.log("props ", props);
   const location = useLocation();
-  console.log({ location });
   const [rateBtn, setRateBtn] = useState(false);
   const [columnDefs] = useState([
     {

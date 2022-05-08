@@ -7,8 +7,8 @@ import classes from "./MainPage.module.css";
 import ReviewModal from "../ReviewModal/ReviewModal";
 import axios from "axios";
 import { FaRegListAlt, FaInfoCircle } from "react-icons/fa";
-const api =
-  "https://www.mashreqins.com/ar/data/selectedCity/enteredName/selectedSpeciality?draw=1&columns[0][data]=address&columns[0][name]=address&columns[0][searchable]=true&columns[0][orderable]=true&columns[0][search][value]=&columns[0][search][regex]=false&columns[1][data]=major&columns[1][name]=major&columns[1][searchable]=true&columns[1][orderable]=true&columns[1][search][value]=&columns[1][search][regex]=false&columns[2][data]=doctor&columns[2][name]=doctor&columns[2][searchable]=true&columns[2][orderable]=true&columns[2][search][value]=&columns[2][search][regex]=false&columns[3][data]=mobile&columns[3][name]=mobile&columns[3][searchable]=true&columns[3][orderable]=true&columns[3][search][value]=&columns[3][search][regex]=false&columns[4][data]=city&columns[4][name]=city&columns[4][searchable]=true&columns[4][orderable]=true&columns[4][search][value]=&columns[4][search][regex]=false&order[0][column]=0&order[0][dir]=asc&start=0&length=3000&search[value]=&search[regex]=false&_=1649055412974";
+const api = "https://www.mashreqins.com/ar/data/selectedCity/enteredName/selectedSpeciality?draw=1&columns%5B0%5D%5Bdata%5D=address&columns%5B0%5D%5Bname%5D=address&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=true&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B1%5D%5Bdata%5D=major&columns%5B1%5D%5Bname%5D=major&columns%5B1%5D%5Bsearchable%5D=true&columns%5B1%5D%5Borderable%5D=true&columns%5B1%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B1%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B2%5D%5Bdata%5D=doctor&columns%5B2%5D%5Bname%5D=doctor&columns%5B2%5D%5Bsearchable%5D=true&columns%5B2%5D%5Borderable%5D=true&columns%5B2%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B2%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B3%5D%5Bdata%5D=mobile&columns%5B3%5D%5Bname%5D=mobile&columns%5B3%5D%5Bsearchable%5D=true&columns%5B3%5D%5Borderable%5D=true&columns%5B3%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B3%5D%5Bsearch%5D%5Bregex%5D=false&columns%5B4%5D%5Bdata%5D=city&columns%5B4%5D%5Bname%5D=city&columns%5B4%5D%5Bsearchable%5D=true&columns%5B4%5D%5Borderable%5D=true&columns%5B4%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B4%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=3000&search%5Bvalue%5D=&search%5Bregex%5D=false&_=1651994326676";
+
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -19,6 +19,7 @@ const MainPage = () => {
     selectedSpeciality: "0",
   });
   const [rowData, setRowData] = useState([]);
+  const [majors, setMajors] = useState([]);
   const loadingMessage = "يرجى الإنتظار";
   const noRowsMessage = "لا يوجد معلومات حاليا";
   const fetchData = () => {
@@ -33,7 +34,6 @@ const MainPage = () => {
     axios.get(tempApi).then((response) => {
       setRowData(response.data.data);
     });
-    console.log(tempApi);
   };
 
   useEffect(() => {
@@ -66,7 +66,6 @@ const MainPage = () => {
       minWidth: 100,
       maxWidth: 120,
       cellRendererFramework: (params) => {
-        console.log({ params });
         return (
           <div
             style={{
@@ -82,7 +81,9 @@ const MainPage = () => {
               size={20}
               onClick={() =>
                 navigate("/overview", {
-                  state: { data: params.data },
+                  state: { data: params.data}
+
+
                 })
               }
             />
